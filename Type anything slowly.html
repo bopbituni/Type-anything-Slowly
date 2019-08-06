@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slowly Baby!!</title>
+</head>
+<body>
+
+<center>
+    <h2>Type Anything Slowly!</h2>
+    <textarea id="input" rows="10px" cols="40px" onkeydown="slowType();" placeholder="HiHi ..."></textarea>
+</center>
+<script>
+    let input = [];
+    let n = "";
+    input[1] = "T";
+    input[2] = "H";
+    input[3] = "A";
+    input[4] = "N";
+    input[5] = 'H';
+    input[6] = " ";
+    input[7] = "Đ";
+    input[8] = "Ỗ";
+    input[9] = " ";
+    input[10] = "Đ";
+    input[11] = "Ẹ";
+    input[12] = "P";
+    input[13] = " ";
+    input[14] = "T";
+    input[15] = "R";
+    input[16] = "A";
+    input[17] = "I";
+
+    function slowType() {
+        let type1 = document.getElementById("input").value;
+        let type2 = type1.length;
+        if (type2 > 0) {
+            for (let i = 1; i <= type2; i++) {
+                n = n + input[i];
+                if (i === 18) {
+                    document.getElementById('input').value = "";
+                    n = "";
+                }
+            }
+        }
+        document.getElementById('input').value = n;
+        n="";
+        setTimeout("slowType()", 1);
+
+    }
+</script>
+</body>
+</html>
